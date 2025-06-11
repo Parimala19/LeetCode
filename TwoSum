@@ -1,0 +1,9 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        visit={}                    #empty dictionary
+        for i in range(len(nums)):  #iterate through the range of list of numbers
+            diff = target-nums[i]   #find the second number if the current is the first number
+            if diff in visit:        # if the difference is alraedy visited then we return the index of the difference i.e the key value is current number and value of that key is index and the current index
+                return [visit[diff],i]
+            else:                   # if it is not visited then we create a key with index as the value
+                visit[nums[i]]=i;
